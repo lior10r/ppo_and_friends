@@ -7,6 +7,7 @@ from ppo_and_friends.utils.schedulers import *
 import torch.nn as nn
 from ppo_and_friends.runners.runner_tags import ppoaf_runner
 
+
 @ppoaf_runner
 class MPESimpleTagRunner(GymRunner):
 
@@ -19,8 +20,8 @@ class MPESimpleTagRunner(GymRunner):
             ParallelZooWrapper(
                 simple_tag_v3.parallel_env(
                     num_good=1,
-                    num_adversaries=3,
-                    num_obstacles=2,
+                    num_adversaries=2,
+                    num_obstacles=0,
                     max_cycles=128,
                     continuous_actions=False,
                     render_mode=self.get_gym_render_mode()),
